@@ -149,9 +149,9 @@ async function addCreateContactSubmit() {
         );
       } else {
         const contacts = getContacts();
-        const id = contact.name + contact.codArea + contact.number;
+        const id = contact.codArea + contact.number;
         const found = contacts.find(
-          (element) => element.name + element.codArea + element.number == id
+          (element) => element.codArea + element.number == id
         );
         if (found) {
           sendToastMessage(
@@ -206,12 +206,22 @@ async function sendToastMessage(title, message, type) {
 async function generateRandomName() {
   const nameInput = document.getElementById("name");
   if (nameInput) {
-    const res = await fetch("https://randomuser.me/api/");
-    const data = await res.json();
-    const person = data.results[0];
-    if (person) {
-      const name = person.name.first + " " + person.name.last;
-      nameInput.value = name;
+    try {
+      const res = await fetch("https://randomuser.me/api/");
+      if (res.ok) {
+        const data = await res.json();
+        const person = data.results[0];
+        if (person) {
+          const name = person.name.first + " " + person.name.last;
+          nameInput.value = name;
+        }
+      }
+    } catch (error) {
+      sendToastMessage(
+        "¡No se genero un nombre!",
+        "No se pudo generar un nombre aleatorio.",
+        "error"
+      );
     }
   }
 }
