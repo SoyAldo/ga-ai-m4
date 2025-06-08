@@ -143,6 +143,22 @@ input::placeholder {
   align-items: center;
 }
 
+.export-contacts-button {
+  background-color: #4c007d;
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border: solid #f988ff 3px;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .create-contact-modal {
   display: none;
   top: 0;

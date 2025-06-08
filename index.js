@@ -226,6 +226,21 @@ async function generateRandomName() {
   }
 }
 
+function exportContacts() {
+  const contacts = getContacts();
+
+  const json = JSON.stringify(contacts);
+  const blob = new Blob([json], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "contacts.json";
+  a.click();
+
+  URL.revokeObjectURL(url);
+}
+
 function main() {
   // Cargar los contactos desde el almacenamiento local
   loadContacts();

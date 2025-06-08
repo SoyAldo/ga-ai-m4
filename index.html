@@ -28,9 +28,13 @@
       class="create-contact-button"
       type="button"
       onclick="showCreateModal()"
-    >
-      +
-    </button>
+    >+</button>
+
+    <button
+      class="export-contacts-button"
+      type="button"
+      onclick="exportContacts()"
+    >📥</button>
 
     <div class="create-contact-modal">
       <button
@@ -40,6 +44,7 @@
       >
         x
       </button>
+      
       <div class="create-contact-container">
         <form class="create-contact-form">
           <h2 class="create-contact-title">Nuevo contacto</h2>
