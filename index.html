@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contactos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header--title">Contactos</h1>
+    </header>
+
+    <section class="information">
+      <p class="information--amount">Tienes 2 contactos</p>
+    </section>
+
+    <main class="contacts"></main>
+
+    <button
+      class="create-contact-button"
+      type="button"
+      onclick="showCreateModal()"
+    >
+      +
+    </button>
+
+    <div class="create-contact-modal">
+      <button
+        class="create-contact-close"
+        type="button"
+        onclick="hideCreateModal()"
+      >
+        x
+      </button>
+      <div class="create-contact-container">
+        <form class="create-contact-form">
+          <h2 class="create-contact-title">Nuevo contacto</h2>
+          <div>
+            <label for="name">Nombre</label>
+            <input
+              class="input"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="John Due"
+            />
+          </div>
+          <div>
+            <label for="codArea">Código de área</label>
+            <input
+              class="input"
+              type="number"
+              name="codArea"
+              id="codArea"
+              placeholder="+54"
+            />
+          </div>
+          <div>
+            <label for="number">Número</label>
+            <input
+              class="input"
+              type="number"
+              name="number"
+              id="number"
+              placeholder="1234567890"
+            />
+          </div>
+
+          <input type="submit" value="Crear contacto" />
+        </form>
+      </div>
+    </div>
+
+    <div class="toast-container" id="toast-container">
+      <div class="toast" id="toast">
+        <h3 class="toast-title" id="toast-title">Example</h3>
+        <p class="toast-message" id="toast-message">This message is an example</p>
+      </div>
+    </div>
+  </body>
+</html>

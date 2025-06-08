@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: inherit;
+  font-size: 16px;
+  background-color: #1b004b;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+p,
+span,
+li,
+a,
+button,
+label,
+input,
+input::placeholder {
+  color: #f988ff;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+p,
+span,
+li,
+a,
+button,
+label,
+input,
+input::placeholder {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  background-color: #4c007d;
+  border-bottom: #f988ff 3px solid;
+}
+
+.header--title {
+  color: #f988ff;
+}
+
+/* Información */
+.information {
+  padding: 1rem 0;
+}
+
+.information--amount {
+  text-align: center;
+}
+
+/* Contactos */
+.contacts {
+  padding: 0 1rem 1rem 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+@media (min-width: 960px) {
+  .contacts {
+    flex-direction: row;
+    justify-content: center;
+    flex-flow: wrap;
+    gap: 2rem;
+  }
+}
+
+.contact {
+  width: 400px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: #4c007d;
+  border-bottom: #f988ff 3px solid;
+  padding: 0.5rem;
+  transition-duration: 300ms;
+}
+
+.contact:hover {
+  background-color: #6202a2;
+}
+
+.contact--options {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.contact--options button {
+  right: 15px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #4c007d;
+  border: solid #f988ff 3px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.create-contact-button {
+  background-color: #4c007d;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border: solid #f988ff 3px;
+  border-radius: 50%;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-contact-modal {
+  display: none;
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.display-block {
+  display: block;
+}
+
+.create-contact-close {
+  background-color: #4c007d;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border: solid #f988ff 3px;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-contact-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-contact-form {
+  background-color: #4c007d;
+  width: 90%;
+  padding: 1rem 2rem;
+  border-bottom: #f988ff 3px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+@media(min-width: 540px) {
+  .create-contact-form {
+    width: auto;
+  }
+}
+
+.create-contact-form h2 {
+  border-bottom: #f988ff solid 3px;
+}
+
+.create-contact-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-contact-form input[type="submit"] {
+  background-color: #4c007d;
+  border: #f988ff solid 3px;
+  padding: 1rem 2rem;
+}
+
+.input {
+  padding: 0.3rem 0.5rem;
+  width: 100%;
+  background-color: #4c007d;
+  border: #f988ff solid 3px;
+}
+
+.input:active, .input:focus {
+  padding: 0.3rem 0.5rem;
+  background-color: #6f01b8;
+  outline: none;
+}
+
+.input-error {
+  background-color: #6f01b8;
+  border: #ff5353 solid 3px;
+  color: #ff5353;
+}
+
+.input-error::placeholder {
+  color: #ff5353;
+}
+
+/* Toast */
+.toast-container {
+  z-index: 1;
+  width: 100%;
+  top: 1rem;
+  position: absolute;
+  display: none;
+}
+
+.toast-visible {
+  display: flex;
+  justify-content: center;
+}
+
+.toast {
+  position: absolute;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.toast-ok {
+  background-color: #88ff8c;
+}
+
+.toast-error {
+  background-color: #ff5353;
+}
+
+.toast-title, .toast-message {
+  text-align: center;
+  color: white;
+}
