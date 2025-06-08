@@ -183,7 +183,7 @@ input::placeholder {
 .create-contact-form {
   background-color: #4c007d;
   width: 90%;
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
   border-bottom: #f988ff 3px solid;
   display: flex;
   flex-direction: column;
@@ -200,7 +200,8 @@ input::placeholder {
   border-bottom: #f988ff solid 3px;
 }
 
-.create-contact-form div {
+.input-container {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -216,6 +217,14 @@ input::placeholder {
   width: 100%;
   background-color: #4c007d;
   border: #f988ff solid 3px;
+}
+
+.input-randomize {
+  position: absolute;
+  bottom: 6px;
+  right: -35px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
 }
 
 .input:active, .input:focus {

@@ -27,7 +27,11 @@ function buildContactElement(contact) {
   const buttonElement = contactElement.querySelector(".contact--delete-button");
   buttonElement.addEventListener("click", () => {
     deleteContact(id);
-    sendToastMessage("¡Contacto eliminado!", "El contacto fue eliminado correctamente.", "ok");
+    sendToastMessage(
+      "¡Contacto eliminado!",
+      "El contacto fue eliminado correctamente.",
+      "ok"
+    );
     loadContacts();
     updateContactAmountText();
   });
@@ -85,15 +89,6 @@ async function updateContactAmountText() {
   }
 }
 
-async function addFunctionToCreateButton() {
-  const createButtonElement = document.querySelector(".create-button");
-  if (createButtonElement) {
-    createButtonElement.addEventListener("onclick", () => {
-      console.log("Abriendo modal de creación");
-    });
-  }
-}
-
 async function showCreateModal() {
   const createContactModalElement = document.querySelector(
     ".create-contact-modal"
@@ -122,7 +117,6 @@ async function addCreateContactSubmit() {
   const createContactFormElement = document.querySelector(
     ".create-contact-form"
   );
-  console.log(createContactFormElement);
 
   if (createContactFormElement) {
     createContactFormElement.addEventListener("submit", (event) => {
@@ -207,6 +201,19 @@ async function sendToastMessage(title, message, type) {
   setTimeout(() => {
     toastContainer.className = "toast-container";
   }, 4000);
+}
+
+async function generateRandomName() {
+  const nameInput = document.getElementById("name");
+  if (nameInput) {
+    const res = await fetch("https://randomuser.me/api/");
+    const data = await res.json();
+    const person = data.results[0];
+    if (person) {
+      const name = person.name.first + " " + person.name.last;
+      nameInput.value = name;
+    }
+  }
 }
 
 function main() {

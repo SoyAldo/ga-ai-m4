@@ -43,7 +43,7 @@
       <div class="create-contact-container">
         <form class="create-contact-form">
           <h2 class="create-contact-title">Nuevo contacto</h2>
-          <div>
+          <div class="input-container">
             <label for="name">Nombre</label>
             <input
               class="input"
@@ -52,8 +52,15 @@
               id="name"
               placeholder="John Due"
             />
+            <button
+              class="input-randomize"
+              type="button"
+              onclick="generateRandomName()"
+            >
+              🎲
+            </button>
           </div>
-          <div>
+          <div class="input-container">
             <label for="codArea">Código de área</label>
             <input
               class="input"
@@ -63,7 +70,7 @@
               placeholder="+54"
             />
           </div>
-          <div>
+          <div class="input-container">
             <label for="number">Número</label>
             <input
               class="input"
@@ -82,7 +89,9 @@
     <div class="toast-container" id="toast-container">
       <div class="toast" id="toast">
         <h3 class="toast-title" id="toast-title">Example</h3>
-        <p class="toast-message" id="toast-message">This message is an example</p>
+        <p class="toast-message" id="toast-message">
+          This message is an example
+        </p>
       </div>
     </div>
   </body>
